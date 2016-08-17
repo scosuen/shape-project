@@ -14,7 +14,7 @@ public class Circle extends Shape {
 
 	}
 
-	public Circle(List<String> args) throws IllegalShapeArgumentException {
+	public Circle(List<String> args) {
 		initializedShape(args);
 	}
 
@@ -24,15 +24,15 @@ public class Circle extends Shape {
 	}
 
 	@Override
-	public boolean isInclude(double x, double y) {
-		double distance = MathUtils.distance(getLocatedPoint(), new Point(x, y));
+	public boolean isInclude(Point point) {
+		double distance = MathUtils.distance(getLocatedPoint(), point);
 		if (radius >= distance)
 			return true;
 		return false;
 	}
 
 	@Override
-	public boolean validateArgs(List<String> args) throws IllegalShapeArgumentException {
+	public boolean validateArgs(List<String> args) {
 		if (args.size() != 4) {
 			throw new IllegalShapeArgumentException("Wrong number of circle arguments. Needs 4 but " + args.size() + " " + args);
 		}
@@ -51,8 +51,7 @@ public class Circle extends Shape {
 
 	@Override
 	public void convertArgs(List<String> args) {
-		getLocatedPoint().setX(Double.valueOf(args.get(1)));
-		getLocatedPoint().setY(Double.valueOf(args.get(2)));
+		setLocatedPoint(new Point(Double.valueOf(args.get(1)), Double.valueOf(args.get(2))));
 		setRadius(Double.valueOf(args.get(3)));
 	}
 
