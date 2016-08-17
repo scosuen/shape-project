@@ -25,6 +25,8 @@ public class ShapePool {
 	}
 	
 	public void add (Shape shape) {
+		if (shape == null) 
+			throw new NullPointerException("Shape is null.");
 		pool.add(shape);
 	}
 	

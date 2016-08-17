@@ -11,12 +11,10 @@ import com.ying.shap_project.service.ShapeService;
 public class ImportFileThread implements Runnable {
 	
 	private String file;
-	private ShapeService shapeService;
 	private IShapeDAO shapeDAO;
 	
-	public ImportFileThread (String file, ShapeService shapeService, IShapeDAO shapeDAO) {
+	public ImportFileThread (String file, IShapeDAO shapeDAO) {
 		this.file = file;
-		this.shapeService = shapeService;
 		this.shapeDAO = shapeDAO;
 	}
 
@@ -40,7 +38,7 @@ public class ImportFileThread implements Runnable {
 	}
 	
 	private Shape createShapeByCommand (String shapeCommand) {
-		Shape shape = shapeService.createShape(Arrays.asList(shapeCommand.split(",")));
+		Shape shape = ShapeFactory.createShape(Arrays.asList(shapeCommand.split(",")));
 		if (shape != null)
 			shapeDAO.add(shape);
 		

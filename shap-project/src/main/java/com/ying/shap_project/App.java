@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.ying.shap_project.exception.IllegalShapeArgumentException;
+import com.ying.shap_project.exception.NoSuchShapeType;
 import com.ying.shap_project.service.ShapeService;
 import com.ying.shap_project.utils.ObjectUtils;
 
@@ -48,7 +49,7 @@ public class App {
 			else
 				System.out.println(CommandConstants.COMMAND_ALERT_PLEASE_ENTER_A_CORRECT_COMMAND);
 
-		} catch (IllegalShapeArgumentException e) {
+		} catch (IllegalShapeArgumentException | NoSuchShapeType | NullPointerException e) {
 			System.out.println(e.getMessage());
 		} catch (Exception e) {
 			System.out.println(CommandConstants.COMMAND_ALERT_UNKNOWN_EXCEPTION);
