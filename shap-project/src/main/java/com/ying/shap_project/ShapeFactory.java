@@ -3,7 +3,7 @@ package com.ying.shap_project;
 import java.util.List;
 import java.util.UUID;
 
-import com.ying.shap_project.exception.NoSuchShapeType;
+import com.ying.shap_project.exception.NoSuchShapeTypeException;
 
 public class ShapeFactory {
 
@@ -20,7 +20,7 @@ public class ShapeFactory {
 		if (shape != null)
 			shape.setName(args.get(0) + "_" + UUID.randomUUID());
 		else
-			throw new NoSuchShapeType("No such type : " + shapeType);
+			throw new NoSuchShapeTypeException("No such type : " + shapeType);
 
 		return shape;
 	}
