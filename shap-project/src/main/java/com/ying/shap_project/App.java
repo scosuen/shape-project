@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.ying.shap_project.exception.IllegalShapeArgumentException;
+import com.ying.shap_project.service.ShapeService;
 import com.ying.shap_project.utils.ObjectUtils;
 
 /**
@@ -57,7 +58,7 @@ public class App {
 	}
 
 	private static void inputByFile(String[] commandArguments) {
-		shapeService.inputByCommand(getArgumentsList(commandArguments, 3));
+		shapeService.inputByFile(commandArguments[3]);
 	}
 
 	private static void inputByCommand(String[] commandArguments) {
@@ -75,7 +76,7 @@ public class App {
 			for (Shape shape : shapes) {
 				double area = shape.getArea();
 				totalArea += area;
-				System.out.println(shape + " Area: " + area);
+				System.out.println(shape.printShape() + " Area: " + area);
 			}
 			System.out.println("The total area is: " + totalArea);
 		}
