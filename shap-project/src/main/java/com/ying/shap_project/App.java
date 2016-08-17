@@ -17,13 +17,11 @@ public class App {
 	private static ShapeService shapeService = new ShapeService();
 
 	public static void main(String[] args) {
-		System.out.println("Shape application");
-		System.out.println("Please type \"sp help\" to see more details.");
+		System.out.println(CommandConstants.COMMAND_WELCOME);
 		Scanner scanner = new Scanner(System.in);
 
-		while (true) {
+		while (true)
 			parseCommand(scanner.nextLine().trim().toLowerCase());
-		}
 	}
 
 	private static void parseCommand(String command) {
