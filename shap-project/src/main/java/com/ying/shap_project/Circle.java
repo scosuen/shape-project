@@ -8,10 +8,16 @@ import com.ying.shap_project.utils.math.MathUtils;
 import com.ying.shap_project.utils.math.Point;
 
 public class Circle extends Shape {
+	
 	private double radius;
 
 	public Circle() {
 
+	}
+	
+	public Circle(Point point, double raidus) {
+		setLocatedPoint(point);
+		this.radius = raidus;
 	}
 
 	public Circle(List<String> args) {

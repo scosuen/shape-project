@@ -90,7 +90,7 @@ public class App {
 		System.out.println("");
 		System.out.println("Input:");
 		System.out.printf("%3s%s%n", " ", "Exampels:");
-		System.out.printf("%6s%s%n", " ", "sp input donut 4.5 7.8 1.5 -1.8 (same as: sp input donut -c 4.5 7.8 1.5 -1.8)");
+		System.out.printf("%6s%s%n", " ", "sp input -c donut 4.5 7.8 1.5 -1.8");
 		System.out.printf("%6s%s%n", " ", "sp input -c circle 1.7 -5.05 6.9");
 		System.out.printf("%6s%s%n", " ", "sp input -f F:\\shaps.csv");
 		System.out.printf("%3s%s%n", " ", "Main operation mode:");
